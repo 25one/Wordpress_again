@@ -1,7 +1,7 @@
-ajax-shortcode для Wordpress – добавляет на страницу кнопку, при нажатии на которую на кроне запускается функция, которая работает 20 сек. в фоновом режиме, после чего пользователю в браузер приходит сообщение
+ajax-shortcode РґР»СЏ Wordpress вЂ“ РґРѕР±Р°РІР»СЏРµС‚ РЅР° СЃС‚СЂР°РЅРёС†Сѓ РєРЅРѕРїРєСѓ, РїСЂРё РЅР°Р¶Р°С‚РёРё РЅР° РєРѕС‚РѕСЂСѓСЋ РЅР° РєСЂРѕРЅРµ Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ С„СѓРЅРєС†РёСЏ, РєРѕС‚РѕСЂР°СЏ СЂР°Р±РѕС‚Р°РµС‚ 20 СЃРµРє. РІ С„РѕРЅРѕРІРѕРј СЂРµР¶РёРјРµ, РїРѕСЃР»Рµ С‡РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ РІ Р±СЂР°СѓР·РµСЂ РїСЂРёС…РѕРґРёС‚ СЃРѕРѕР±С‰РµРЅРёРµ
 
 1.function.php :
-…
+вЂ¦
 function button_add() {
 wp_register_script( 'twenty-seconds.js', get_template_directory_uri().'/js/twenty-seconds.js');
 wp_enqueue_script( 'twenty-seconds.js' );
@@ -10,9 +10,9 @@ return '<button type="button" name="'.$jquery_send_patch.'" id="twenty_seconds">
 }
 add_shortcode('button_cron', 'button_add');
 
-+на страницу в нужное место  [button_cron]
++РЅР° СЃС‚СЂР°РЅРёС†Сѓ РІ РЅСѓР¶РЅРѕРµ РјРµСЃС‚Рѕ  [button_cron]
 
-2.тема/js/twenty-seconds.js :
+2.С‚РµРјР°/js/twenty-seconds.js :
 jQuery(document).ready(function() {
 jQuery("body").on("click", "#twenty_seconds", function() {cron.twentyseconds(this.getAttribute("name"));});
 });
@@ -30,7 +30,7 @@ var cron={
    },
 }
 
-3.фоновый php-скрипт - тема/twentyseconds.php :
+3.С„РѕРЅРѕРІС‹Р№ php-СЃРєСЂРёРїС‚ - С‚РµРјР°/twentyseconds.php :
 <?php
 if(isset($_GET['twentyseconts'])) {
 sleep(20);
