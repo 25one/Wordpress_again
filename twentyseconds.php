@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET['twentyseconts'])) {
-sleep(10);
+sleep(20);
 echo "Hello... It's been twenty seconds!";
 }
 ?>
